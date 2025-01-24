@@ -1,52 +1,46 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LEVEL = exports.BRICK_ENERGY = exports.BRICK_IMAGES = exports.BALL_STARTY = exports.BALL_STARTX = exports.BALL_SIZE = exports.BALL_SPEED = exports.PADDLE_SPEED = exports.PADDLE_STARTX = exports.PADDLE_HEIGHT = exports.PADDLE_WIDTH = exports.BRICK_HEIGHT = exports.BRICK_WIDTH = exports.BRICK_PADDING = exports.STAGE_COLS = exports.STAGE_ROWS = exports.STAGE_PADDING = void 0;
-const brick_red_png_1 = __importDefault(require("./images/brick-red.png"));
-const brick_blue_png_1 = __importDefault(require("./images/brick-blue.png"));
-const brick_green_png_1 = __importDefault(require("./images/brick-green.png"));
-const brick_yellow_png_1 = __importDefault(require("./images/brick-yellow.png"));
-const brick_purple_png_1 = __importDefault(require("./images/brick-purple.png"));
+import RED_BRICK_IMAGE from './images/brick-red.png';
+import BLUE_BRICK_IMAGE from './images/brick-blue.png';
+import GREEN_BRICK_IMAGE from './images/brick-green.png';
+import YELLOW_BRICK_IMAGE from './images/brick-yellow.png';
+import PURPLE_BRICK_IMAGE from './images/brick-purple.png';
 // Grab the canvas element for calculating the brick width
 // depending on canvas width
-const canvas = document.querySelector('#playField');
+var canvas = document.querySelector('#playField');
 // Constants
-exports.STAGE_PADDING = 10;
-exports.STAGE_ROWS = 20;
-exports.STAGE_COLS = 10;
-exports.BRICK_PADDING = 5;
-exports.BRICK_WIDTH = canvas
-    ? Math.floor((canvas.width - exports.STAGE_PADDING * 2) / exports.STAGE_COLS) - exports.BRICK_PADDING
+export var STAGE_PADDING = 10;
+export var STAGE_ROWS = 20;
+export var STAGE_COLS = 10;
+export var BRICK_PADDING = 5;
+export var BRICK_WIDTH = canvas
+    ? Math.floor((canvas.width - STAGE_PADDING * 2) / STAGE_COLS) - BRICK_PADDING
     : 100;
-exports.BRICK_HEIGHT = canvas
-    ? Math.floor((canvas.height - exports.STAGE_PADDING * 2) / exports.STAGE_ROWS) - exports.BRICK_PADDING
+export var BRICK_HEIGHT = canvas
+    ? Math.floor((canvas.height - STAGE_PADDING * 2) / STAGE_ROWS) - BRICK_PADDING
     : 30;
-exports.PADDLE_WIDTH = 150;
-exports.PADDLE_HEIGHT = 25;
-exports.PADDLE_STARTX = 450;
-exports.PADDLE_SPEED = 10;
-exports.BALL_SPEED = 5;
-exports.BALL_SIZE = 20;
-exports.BALL_STARTX = 500;
-exports.BALL_STARTY = 400;
-exports.BRICK_IMAGES = {
-    1: brick_red_png_1.default,
-    2: brick_green_png_1.default,
-    3: brick_yellow_png_1.default,
-    4: brick_blue_png_1.default,
-    5: brick_purple_png_1.default
+export var PADDLE_WIDTH = 150;
+export var PADDLE_HEIGHT = 25;
+export var PADDLE_STARTX = 450;
+export var PADDLE_SPEED = 10;
+export var BALL_SPEED = 5;
+export var BALL_SIZE = 20;
+export var BALL_STARTX = 500;
+export var BALL_STARTY = 400;
+export var BRICK_IMAGES = {
+    1: RED_BRICK_IMAGE,
+    2: GREEN_BRICK_IMAGE,
+    3: YELLOW_BRICK_IMAGE,
+    4: BLUE_BRICK_IMAGE,
+    5: PURPLE_BRICK_IMAGE
 };
-exports.BRICK_ENERGY = {
-    1: 1,
-    2: 1,
-    3: 2,
-    4: 2,
+export var BRICK_ENERGY = {
+    1: 1, // Red brick
+    2: 1, // Green brick
+    3: 2, // Yellow brick
+    4: 2, // Blue brick
     5: 3 // Purple brick
 };
 // prettier-ignore
-exports.LEVEL = [
+export var LEVEL = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 1, 1, 1, 1, 1, 1, 0, 0,
     0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
